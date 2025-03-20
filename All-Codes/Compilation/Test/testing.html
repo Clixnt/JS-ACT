@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose a Feature</h1>
+    <label for="featureInput">Type a feature name:</label>
+    <input type="text" id="featureInput" placeholder="Enter feature name">
+  
+    <button onclick="processInput()">Submit</button>
+    <div class="output" id="output"></div>
+
+    <script>
+    function processInput() {
+            const input = document
+                .getElementById("featureInput")
+                .value.trim();
+
+            switch (input) {
+                case "1":
+                    window.location.href = "Web/Calculator 3.0/index.html";
+                    break;
+                case "2":
+                    window.location.href = "memory_game.html";
+                    break;
+                case "3":
+                    window.location.href = "grade_remarks.html";
+                    break;
+                case "4":
+                    window.location.href = "string_length.html";
+                    break;
+                case "5":
+                    window.location.href = "letter_alphabet.html";
+                    break;
+                default:
+                    alert("Invalid choice. Please try again.");
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

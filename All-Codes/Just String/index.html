@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            background-color: whitesmoke;
+        }
+
+        #output {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript String</h2>
+    <p id="output"></p>
+
+    <script>
+        let text = "Clint";
+        let text2 = "Lorenzo"
+        document.getElementById("output").innerHTML = text + "" + text2;
+    </script>
+</body>
+
+</html>

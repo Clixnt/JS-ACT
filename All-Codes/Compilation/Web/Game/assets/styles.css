@@ -1,0 +1,259 @@
+@font-face {
+  font-family: Fredoka;
+  src: url(./FredokaOne-Regular.ttf);
+}
+:root {
+  --CssScan-BoxShadow-2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* BUTTON X */
+.close-btn {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  box-shadow: var(--CssScan-BoxShadow-2);
+
+  &:hover {
+    background-color: darkred;
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    325deg,
+    #ffff00 0%,
+    #fc7900 50%,
+    rgb(179, 122, 16) 100%
+  );
+  font-family: Fredoka;
+}
+
+.msg {
+  display: none;
+  background-color: #282a3a;
+  width: auto;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 15px 2px rgb(111, 111, 111);
+}
+
+.msg p {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+}
+
+.game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  padding-top: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fdf8e6;
+  font-size: 16px;
+}
+
+button {
+  background: #282a3a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 0;
+  cursor: pointer;
+  font-family: Fredoka;
+  font-size: 18pt;
+  box-shadow: 5px 3px 15px 1px darkblue;
+  transition: all 0.5s;
+}
+
+.myBTN {
+  background: #282a3a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 0;
+  cursor: pointer;
+  font-family: Fredoka;
+  font-size: 18pt;
+  box-shadow: 5px 3px 15px 1px darkblue;
+  transition: all 0.5s;
+}
+
+button:hover {
+  color: #ed977c;
+  background-color: #3e415a;
+}
+
+button.lock {
+  pointer-events: none;
+  background-color: #4d4c4c;
+}
+
+.disabled {
+  color: #757575;
+  /* background-color: #cccccc; */
+}
+
+.stats {
+  color: #fff;
+  font-size: 14pt;
+  border: 1px dotted floralwhite;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 5px 3px 15px 1px darkblue;
+  border-radius: 7px;
+}
+
+.stats .moves,
+.timer {
+  color: #ffffff;
+}
+
+.controls {
+  margin-right: 10px;
+}
+
+.board-container {
+  position: relative;
+}
+
+.board,
+.win {
+  border-radius: 5px;
+  box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+  /* background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
+  background: linear-gradient(135deg, #ffff00a8 0%, #ff7b00 50%, #ff2a00 100%);
+
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.board {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+}
+
+.board-container.flipped .board {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.board-container.flipped .win {
+  transform: rotateY(0) rotateZ(0);
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background: #3a3328;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg) rotateZ(50deg);
+  font-size: 28pt;
+  user-select: none;
+  text-align: center;
+  line-height: 100px;
+  background: #fdf8e6;
+}
+
+.card.flipped .card-front {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0) rotateZ(0);
+}
+
+.win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #fdf8e6;
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.win-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 21pt;
+  color: #282a3a;
+}
+
+.highlight {
+  color: #6f00fc;
+}
+
+@media (max-width: 700px) {
+  .board-container {
+    width: 370px;
+  }
+
+  .card {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .card-back {
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 20pt;
+    user-select: none;
+    text-align: center;
+    line-height: 70px;
+    background: #fdf8e6;
+  }
+}

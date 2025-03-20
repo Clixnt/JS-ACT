@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act7</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Strings</h1>
+    <h1>strRepeat()</h1>
+    <button onclick="shet()">CLICK HERE</button>
+    <p id="output">ggggggg</p>
+
+    <script>
+        function shet() {
+            let text = document.getElementById("output").innerHTML;
+            document.getElementById("output").innerHTML = text.replace("ggggggg", "SHEESH");
+        }
+    </script>
+</body>
+
+</html>

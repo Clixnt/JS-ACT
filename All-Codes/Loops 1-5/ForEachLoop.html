@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop4</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The forEach() Method</h2>
+
+    <p>Call a function once for each array element:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const numbers = [45, 4, 9, 16, 25, 69];
+
+        let txt = "";
+        {
+            txt += numbers;
+        }
+
+        document.getElementById("demo").innerHTML = txt;
+    </script>
+
+</body>
+
+</html>

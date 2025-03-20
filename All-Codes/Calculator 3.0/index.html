@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Clint Lorenzo">
+    <title>Calculator 3.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/SELECT-ACT/Icon/icons8-skatepark-48.png" type="image/x-icon">
+</head>
+
+<body>
+    
+    <main>
+        <div id="closeMain" class="container">
+            <div class="MacOS-Button">
+                <div id="Macbutton1" class="close icon"></div>
+                <div id="Macbutton2" class="minimize icon"></div>
+                <div id="Macbutton3" class="maximize icon"></div>
+            </div>
+
+            <div class="output-number">
+                <input id="display" name="NumberOutputDisplay" readonly>
+            </div>
+
+            <div class="calculator">
+                <div class="button-container" id="mode-num">
+                    <button onclick="Clear()" class="gray">CE</button>
+                    <button onclick="Delete()" class="gray">DEL</button>
+                    <button onclick="DisplayKeys('%')" class="gray">%</button>
+                    <button onclick="DisplayKeys('/')" class="orange">÷</button>
+
+                    <button onclick="DisplayKeys('7')" class="lightgray">7</button>
+                    <button onclick="DisplayKeys('8')" class="lightgray">8</button>
+                    <button onclick="DisplayKeys('9')" class="lightgray">9</button>
+                    <button onclick="DisplayKeys('*')" class="orange">X</button>
+
+                    <button onclick="DisplayKeys('4')" class="lightgray">4</button>
+                    <button onclick="DisplayKeys('5')" class="lightgray">5</button>
+                    <button onclick="DisplayKeys('6')" class="lightgray">6</button>
+                    <button onclick="DisplayKeys('-')" class="orange">−</button>
+
+                    <button onclick="DisplayKeys('1')" class="lightgray">1</button>
+                    <button onclick="DisplayKeys('2')" class="lightgray">2</button>
+                    <button onclick="DisplayKeys('3')" class="lightgray">3</button>
+                    <button onclick="DisplayKeys('+')" class="orange">+</button>
+
+                    <button onclick="DisplayKeys('0')" class="lightgray zero">0</button>
+                    <button onclick="DisplayKeys('.')" class="lightgray">.</button>
+                    <button onclick="Calculate()" class="orange equal">=</button>
+                </div>
+
+                <div class="button-container2" id="mode-sc">
+                    <button onclick="Clear()" class="gray">CE</button>
+                    <button onclick="Delete()" class="gray">DEL</button>
+                    <button onclick="pi()" class="gray">π</button>
+                    <button onclick="DisplayKeys('/')" class="orange">÷</button>
+
+                    <button value="sin" onclick="display.value += 'sin'" class="lightgray">sin</button>
+                    <button value="cos" onclick="display.value += 'cos'" class="lightgray">cos</button>
+                    <button value="tan" onclick="display.value += 'tan'" class="lightgray">tan</button>
+                    <button onclick="DisplayKeys('*')" class="orange">X</button>
+
+                    <button value="log" onclick="display.value += 'log'" class="lightgray">log</button>
+                    <button onclick="DisplayKeys('(')" class="lightgray">&#10088;</button>
+                    <button onclick="DisplayKeys(')')" class="lightgray">&#10089;</button>
+                    <button onclick="DisplayKeys('-')" class="orange">−</button>
+
+                    <button onclick="DisplayKeys('')" class="lightgray">x!</button>
+                    <button onclick="DisplayKeys('**')" class="lightgray">^</button>
+                    <button onclick="squareRoot()" class="lightgray">√</button>
+                    <button onclick="DisplayKeys('+')" class="orange">+</button>
+
+                    <button onclick="DisplayKeys('!')" class="lightgray idk">!</button>
+                    <button onclick="DisplayKeys(',')" class="lightgray zero">,</button>
+                    <button onclick="DisplayKeys('.')" class="lightgray">.</button>
+                    <button onclick="Calculate()" class="orange equal">=</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="behind-button">
+            <button type="button" id="behind">Click to show the calculator :]</button>
+        </div>
+    </main>
+
+    <div id="ModesContainer">
+        <div class="scntic-modes">
+            <div class="mode-wrapper">
+                <button class="mode1 " id="face1">123</button>
+                <button class="mode2" id="face2">Fx</button>
+            </div>
+
+            <div class="none-wrapper" id="NoneWrapper">
+                <button class="none-mode">
+                    <a href="https://github.com/Clixnt?tab=repositories"> Made By: Clint Lorenzo </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

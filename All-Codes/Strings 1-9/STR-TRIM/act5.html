@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act5</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Strings</h1>
+    <h1>strTrim()</h1>
+    <p id="output"></p>
+
+    <script>
+        let text1 = "          Clint       ";
+        let text2 = text1.trim();
+
+        document.getElementById("output").innerHTML = "Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+    </script>
+</body>
+
+</html>

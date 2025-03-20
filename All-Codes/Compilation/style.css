@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background: var(--ld);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+}
+* {
+  padding: 0;
+  margin: 0;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  /* outline: 3px solid blueviolet; */
+}
+:root {
+  --ld: url("Image/dark.svg") no-repeat center center fixed;
+  --text: #ffffff;
+  --text2: #ffffff;
+  --color-1: rgb(251, 174, 60);
+  --color-2: rgb(2, 25, 42);
+  --box-shadown2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.dark-theme {
+  --ld: url("Image/light.svg") no-repeat center center fixed;
+  --text: rgba(245, 245, 245, 0.897);
+  --text2: rgba(0, 0, 0, 0.377);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & .Image-logo {
+    margin-left: 50px;
+
+    & h2 {
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      letter-spacing: 8px;
+      color: white;
+      text-shadow: 1px 1px 0 var(--color-1), 1px 2px 0 var(--color-1),
+        1px 3px 0 var(--color-1), 1px 4px 0 var(--color-1),
+        1px 5px 0 var(--color-1), 1px 6px 0 var(--color-1),
+        1px 7px 0 var(--color-1), 1px 8px 0 var(--color-1),
+        5px 13px 15px rgb(29, 14, 14);
+
+      &:hover {
+        transition: 0.3s;
+        transform: scale(1.1) translate(1%, 1%);
+        text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+          1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+          1px -8px 0 grey, 5px -13px 15px black,
+          5px -13px 25px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+article {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
+.Link-All {
+  border-radius: 17px;
+  width: 95%;
+  max-width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.contLink {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 7px;
+  gap: 10px;
+
+  & .link-num {
+    background-color: var(--color-1);
+    width: 18%;
+    height: 90%;
+    border-radius: 20px;
+    border: 2px solid;
+    display: grid;
+    place-items: center;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: var(--box-shadown2);
+    border: none;
+    color: var(--text);
+    text-shadow: 0px 0px 12px black;
+    transition: all 0.3s;
+
+    &:hover {
+      text-shadow: 0px 0px 20px black;
+      transition: all 0.3s;
+    }
+  }
+  & a {
+    width: 85%;
+    height: 90%;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: var(--text);
+    text-shadow: 0px 0px 12px black;
+    letter-spacing: 9px;
+    font-weight: bolder;
+    box-shadow: var(--box-shadown2);
+    transition: all 0.2s;
+    background-size: 100%;
+
+    @media (width <= 500px) {
+      letter-spacing: 5px;
+    }
+    @media (width <= 375px) {
+      letter-spacing: 4px;
+    }
+    @media (width <= 320px) {
+      letter-spacing: 2px;
+    }
+
+    &:hover {
+      text-shadow: 0px 0px 20px black;
+      transition: 0.3s;
+      color: orange;
+      transform: scale(1.05) translate(2%, -2%);
+    }
+
+    & p {
+      display: grid;
+      place-content: center;
+      height: 100%;
+      font-size: 0.7rem;
+      font-size: clamp(
+        0.7rem,
+        -0.21428571428571463rem + 4.571428571428573vw,
+        1rem
+      );
+    }
+  }
+}
+
+.link1 a {
+  background-image: url(Image/sci.png);
+  background-position: 0% 85%;
+}
+.link2 a {
+  background-image: url(Image/Mem.png);
+  background-position: 60% 100%;
+}
+.link3 a {
+  background-image: url(Image/Grade.png);
+  background-position: 50% -10%;
+}
+.link4 a {
+  background-image: url(Image/Leg.png);
+  background-position: 100% 50%;
+}
+.link5 a {
+  background-image: url(Image/Letter.png);
+  background-position: 0%;
+}
+.link6 a {
+  background-color: red;
+  background-position: 0%;
+}
+
+.input-action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+  & .shell {
+    background-color: var(--color-1);
+    width: 95%;
+    max-width: 590px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-block: 10px;
+    box-shadow: var(--box-shadown2);
+
+    & .InputB,
+    .ButtonB {
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: var(--box-shadown2);
+    }
+
+    & .InputB {
+      padding-left: 15px;
+      width: 95%;
+      max-width: 450px;
+      height: 55px;
+      margin-left: 5px;
+    }
+
+    & .ButtonB {
+      width: 95%;
+      max-width: 100px;
+      height: 59px;
+      margin-right: 5px;
+    }
+  }
+}

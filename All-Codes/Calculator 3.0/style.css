@@ -1,0 +1,401 @@
+/* Calculator, Code By Clint Lorenzo */
+.close-btn {
+  box-shadow: var(--CssScan-BoxShadow-2);
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+
+  &:hover {
+    background-color: darkred;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: monospace;
+  gap: 10px;
+  height: 100vh;
+  height: 100svh;
+  background-color: var(--dark-Grayblack-background);
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 2px solid blueviolet; */
+}
+:root {
+  /* background color for button */
+  --Bg-Button-Gray: rgb(85, 85, 86);
+  --Bg-Button-LightGray: rgb(113, 113, 114);
+  --Bg-Button-DarkOrange: rgb(242, 164, 59);
+
+  /* Hover Bg for button */
+  --hover-lightGray: rgb(128, 128, 128);
+  --hover-lightorange: rgb(255, 182, 92);
+
+  /* ~ */
+  --dark-Grayblack-background: rgb(67, 67, 68);
+  --border-lightgray: rgb(67, 67, 68);
+  --CssScan-BoxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --CssScan-BoxShadow-2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* Real Code Starts Here 🗣️ */
+main {
+  width: 95%;
+  max-width: 400px;
+  height: fit-content;
+  display: grid;
+}
+.container {
+  background-color: var(--dark-Grayblack-background);
+  box-shadow: var(--CssScan-BoxShadow-2);
+  border-radius: 10px;
+  z-index: 1;
+}
+.container,
+.behind-button {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* Behind Button of calculator */
+.behind-button {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  & button {
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--CssScan-BoxShadow);
+    color: white;
+    background: linear-gradient(
+      319deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+}
+
+/* Top left, 3 Mac Button */
+.MacOS-Button {
+  display: inline-flex;
+  gap: 5px;
+  padding: 10px;
+
+  & .icon {
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transition: all 0.3s;
+    }
+  }
+
+  & .close {
+    background-image: url(button/1-close-1-normal.svg);
+
+    &:hover {
+      background-image: url(button/2-close-2-hover.svg);
+    }
+  }
+
+  & .minimize {
+    background-image: url(button/2-minimize-1-normal.svg);
+
+    &:hover {
+      background-image: url(button/2-minimize-2-hover.svg);
+    }
+  }
+
+  & .maximize {
+    background-image: url(button/3-maximize-1-normal.svg);
+
+    &:hover {
+      background-image: url(button/3-maximize-2-hover.svg);
+    }
+  }
+}
+
+/* Output Number Style (ReadOnly) */
+.output-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: end;
+  padding-bottom: 3px;
+  height: 55px;
+  width: 100%;
+
+  & input {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    text-align: end;
+    width: 100%;
+    padding-right: 0.5rem;
+
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+}
+
+/* Calculator Container for the 2*/
+.calculator {
+  display: grid;
+}
+
+.button-container,
+.button-container2 {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 380px;
+  grid-template-columns: repeat(4, 1fr);
+
+  & .zero {
+    grid-column: 1 / 3;
+    border-radius: 0 0 0 10px;
+  }
+  & .equal {
+    border-radius: 0 0 10px;
+  }
+
+  /* Button Colors */
+  & .gray {
+    background-color: var(--Bg-Button-Gray);
+  }
+  & .orange {
+    background-color: var(--Bg-Button-DarkOrange);
+  }
+  & .lightgray {
+    background-color: var(--Bg-Button-LightGray);
+  }
+
+  & button {
+    font-weight: bold;
+    border: 1px solid var(--border-lightgray);
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+    border-radius: 4px;
+
+    @media (width >= 768px) {
+      cursor: pointer;
+    }
+
+    &:focus:not(.orange),
+    &:hover:not(.orange),
+    &:focus:not(.gray, .lightgray),
+    &:hover:not(.gray, .lightgray) {
+      transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+    }
+    &:focus:not(.orange),
+    &:focus:not(.gray, .lightgray) {
+      outline: none;
+      border: none;
+    }
+    &:focus:not(.orange) {
+      background-color: var(--hover-lightGray);
+    }
+    &:focus:not(.gray, .lightgray) {
+      background-color: var(--hover-lightorange);
+    }
+    &:hover:not(.orange) {
+      background-color: var(--hover-lightGray);
+    }
+    &:hover:not(.gray, .lightgray) {
+      background-color: var(--hover-lightorange);
+    }
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}
+
+.button-container2 {
+  & .idk {
+    border-radius: 0 0 0 10px;
+  }
+  & .zero {
+    grid-column: unset !important;
+    border-radius: 0px;
+  }
+}
+
+/* Bottom, All container for all modes */
+#ModesContainer {
+  width: 95%;
+  max-width: 400px;
+}
+
+/* Bottom, Div Mode Container, for Mode, none wrapper */
+.scntic-modes {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @media (width <= 375px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  & button {
+    width: 100%;
+    height: 40px;
+    font-family: system-ui;
+    font-weight: bolder;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--CssScan-BoxShadow-2);
+
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}
+
+/* Mode, none wrapper  */
+.none-wrapper,
+.mode-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  border-radius: 10px;
+  box-shadow: var(--CssScan-BoxShadow);
+}
+
+/* Mode 1 and 2 Wrapper */
+.mode1,
+.mode2 {
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+
+  &:hover {
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+  }
+}
+.mode1 {
+  border-radius: 10px 0 0 10px;
+  background-color: var(--Bg-Button-LightGray);
+
+  &:hover {
+    background-color: var(--hover-lightGray);
+  }
+}
+.mode2 {
+  border-radius: 0 10px 10px 0;
+  background-color: var(--Bg-Button-DarkOrange);
+
+  &:hover {
+    background-color: var(--hover-lightorange);
+  }
+}
+
+/* Author button */
+.none-wrapper {
+  & .none-mode {
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(
+      to right,
+      var(--Bg-Button-LightGray) 0%,
+      var(--Bg-Button-LightGray) 5%,
+      var(--Bg-Button-DarkOrange) 60%,
+      var(--Bg-Button-DarkOrange) 100%
+    );
+
+    & a {
+      text-decoration: none;
+      color: white;
+      font-family: monospace;
+      transition: linear 0.25s;
+
+      &:hover {
+        text-shadow: 0px 0px 10px whitesmoke;
+        transition: linear 0.25s;
+      }
+    }
+  }
+}
+
+/* Js toggle - Minimize & Maximize */
+.MinimizeToggle {
+  & .button-container,
+  .button-container2 {
+    height: 330px;
+  }
+  & main {
+    max-width: 350px;
+  }
+  & #ModesContainer {
+    max-width: 350px;
+  }
+}
+.MaximizeToggle {
+  & .button-container,
+  .button-container2 {
+    height: 450px;
+  }
+  & main {
+    max-width: 450px;
+  }
+  & #ModesContainer {
+    max-width: 450px;
+  }
+}
+
+/* Media responsive for 375px to 320px */
+@media (width <= 375px) {
+  .button-container,
+  .button-container2 {
+    height: 340px;
+  }
+}
+@media (width <= 320px) {
+  .button-container,
+  .button-container2 {
+    height: 320px;
+  }
+}

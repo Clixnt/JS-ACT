@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssignmentDaw :]</title>
+    <link rel="shortcut icon" href="/SELECT-ACT/Icon/icons8-skatepark-48.png" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 2.8rem;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            --CssScan-BoxShadow-2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        .close-btn {
+            box-shadow: var(--CssScan-BoxShadow-2);
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            right: 40px;
+
+            &:hover {
+                background-color: darkred;
+            }
+        }
+
+        .inputB {
+            width: 400px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 1.6rem;
+            padding-left: 10px;
+        }
+
+        .gradeInfo-Output {
+            display: flex;
+            gap: 30px;
+        }
+
+        .CheckB {
+            height: 55px;
+            width: 70px;
+            border-radius: 10px;
+        }
+
+        .input-box {
+            display: inline-flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="close-btn" href="/Sandbox-JS/index.html">X</a>
+
+    <div class="title-name">
+        <h2>Javascript If Else</h2>
+        <hr>
+    </div>
+
+    <div class="gradeInfo-Output">
+        <hr>
+        <p id="gradeInfo">Grade:&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <hr>
+        <p id="Output">Status:&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <hr>
+    </div>
+
+    <div class="input-box">
+        <input type="number" class="inputB" id="inputGrade" placeholder="Enter Grade">
+        <button onclick="checkGrade()" class="CheckB">Check</button>
+    </div>
+
+    <script>
+        function checkGrade() {
+            let inputValueNum = document.getElementById("inputGrade").value;
+            let info;
+
+            if (inputValueNum === "") {
+                info = "Please enter a grade.";
+                document.getElementById("gradeInfo").textContent = "Undefined";
+                document.getElementById("Output").style.color = "Gray";
+                document.getElementById("gradeInfo").style.color = "Gray";
+            }
+
+            else {
+                document.getElementById("gradeInfo").innerHTML = "Grade:" + inputValueNum;
+
+                if (inputValueNum >= 75) {
+                    info = "Status:Passed ";
+                    document.getElementById("Output").style.color = "Green";
+                }
+                else {
+                    info = "Status:Failed";
+                    document.getElementById("Output").style.color = "red";
+                }
+            }
+
+            document.getElementById("Output").innerHTML = info;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Length</title>
+    <link rel="shortcut icon" href="/SELECT-ACT/Icon/icons8-skatepark-48.png" type="image/x-icon">
+    <style>
+        :root {
+            --CssScan-BoxShadow-2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        body {
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            background-color: darkslategrey;
+            color: white;
+        }
+
+        * {
+            text-decoration: none;
+        }
+
+        main {
+            height: 98%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .close {
+            display: inline-flex;
+            justify-content: flex-end;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .close-btn {
+            margin-right: 50px;
+        }
+
+        h2 {
+            letter-spacing: 4px;
+        }
+
+        #output {
+            font-size: 2rem;
+        }
+
+        input,
+        button {
+            font-size: 1rem;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: var(--CssScan-BoxShadow-2);
+        }
+
+        .close-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="close">
+        <a class="close-btn" href="/Sandbox-JS/index.html">X</a>
+    </div>
+    <main>
+        <h2>Javascript Length</h2>
+        <div>
+            <input id="userInput" type="text" placeholder="Enter Text">
+            <button id="submitBtn">Submit</button>
+        </div>
+        <p id="output"></p>
+    </main>
+
+    <script>
+        document.getElementById("submitBtn").onclick = function() {
+
+            let inputText = document.getElementById("userInput").value;
+            document.getElementById("output").innerHTML = "Length: " + inputText.length;
+
+        };
+    </script>
+</body>
+
+</html>

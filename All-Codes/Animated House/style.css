@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Code By Clint Justine Lorenzo */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-color);
+}
+body {
+  background-color: var(--background-ui-dark);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 3px solid blueviolet; */
+}
+:root {
+  --background-ui-dark: #313639;
+  --font-main: "Courier New", Courier, monospace;
+  --scroll-color: hsl(200, 100%, 72%) hsl(200, 69%, 42%);
+  --house-bg-color: hsl(0, 0%, 96%);
+  --house-bg-color2: linear-gradient(hsl(0, 0%, 83%),hsl(0, 0%, 96%),hsl(0, 0%, 96%),hsl(0, 0%, 94%));
+  --main-color-blue: rgb(70, 130, 180);
+  --grass-green: hsl(120, 77%, 35%);
+  --window-line-color: hsl(0, 0%, 75%);
+  --grass-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  --House-Shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  --button-shadow: 0px 6px hsl(200, 69%, 42%);
+  --button-bg-blue: hsl(200, 100%, 72%);
+  --border-lightblue-3d: hsla(195, 53%, 79%, 0.514);
+}
+
+/* Real Code Stars Here 🗣️🗣️🗣️ */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 28px;
+
+  @media (width <=450px) {
+    justify-content: center;
+  }
+}
+
+.House-Container {
+  height: 450px;
+  width: 95%;
+  max-width: 400px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-bg-blue);
+  box-shadow: var(--button-shadow);
+  border: 1px solid var(--border-lightblue-3d);
+  box-sizing: unset;
+  transition: linear 1s;
+
+  &:hover {
+    transition: linear 1s;
+    /* transform: rotate(360deg); */
+  }
+
+  @media (width <=420px) {
+    max-width: 300px;
+    height: 300px;
+    border: none;
+    box-sizing: unset;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+
+/* Here6 */
+.House-Container * {
+  position: absolute;
+  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.5s;
+}
+
+.about-act,
+.name-section {
+  box-shadow: var(--shdwo);
+  transition: all 0.25s;
+
+  &:hover {
+    transition: all 0.25s;
+    scale: 1.01;
+  }
+}
+
+.AboutName-Container {
+  display: grid;
+  gap: 20px;
+  width: 95%;
+  max-width: 400px;
+}
+
+.about-wrapper,
+.name-wrapper {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-main);
+  background-color: var(--button-bg-blue);
+  box-shadow: var(--button-shadow);
+  border: 1.5px solid var(--border-lightblue-3d);
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.about-wrapper {
+  font-size: 0.9rem;
+  padding-block: 14px;
+
+  & h2:nth-child(1) {
+    font-size: 1rem;
+    font-size: clamp(
+      1rem,
+      0.08571428571428541rem + 4.571428571428573vw,
+      1.3rem
+    );
+    padding-bottom: 5px;
+  }
+  & h2:nth-child(2) {
+    font-size: 0.86rem;
+    font-size: clamp(
+      0.86rem,
+      0.037142857142857255rem + 4.114285714285713vw,
+      1.13rem
+    );
+  }
+}
+
+.name-wrapper {
+  padding-block: 10px;
+  font-size: 0.76rem;
+  font-size: clamp(
+    0.76rem,
+    0.02857142857142847rem + 3.6571428571428575vw,
+    1rem
+  );
+
+  & p {
+    padding-block: 2px;
+
+    &:first-child {
+      letter-spacing: 3.3px;
+
+      @media (width <= 375px) {
+        letter-spacing: 3px;
+      }
+      @media (width <= 320px) {
+        letter-spacing: 2.5px;
+      }
+    }
+  }
+}
+
+.about-act {
+  padding-block: 12px;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.39047619047619053rem + 3.0476190476190474vw, 1.2rem);
+}
+
+.name-section {
+  padding: 10px;
+  font-size: 0.7rem;
+  font-size: clamp(
+    0.7rem,
+    -0.06190476190476202rem + 3.8095238095238098vw,
+    0.95rem
+  );
+}
+
+.wall {
+  top: 50%;
+  left: 75px;
+  height: 200px;
+  width: 95%;
+  max-width: 260px;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+  box-shadow: var(--House-Shadow);
+  background: var(--house-bg-color);
+
+  @media (width <=420px) {
+    max-width: 161px;
+    height: 150px;
+    top: 46%;
+    left: 76px;
+  }
+}
+
+.roof {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  top: 127px;
+  left: 100px;
+  height: 183px;
+  width: 95%;
+  max-width: 206px;
+  transform: rotate(42deg);
+  box-shadow: var(--shadow-2);
+  background: var(--house-bg-color2);
+  border-top: 10px solid var(--main-color-blue);
+  border-left: 10px solid var(--main-color-blue);
+
+  @media (width <=420px) {
+    top: 24%;
+    left: 90px;
+    height: 120px;
+    max-width: 130px;
+  }
+}
+
+.window {
+  bottom: 120px;
+  left: 110px;
+  height: 80px;
+  width: 95%;
+  max-width: 85px;
+  z-index: 3;
+  border-radius: 5px;
+  background: var(--main-color-blue);
+  box-shadow: var(--House-Shadow);
+
+  @media (width <=420px) {
+    bottom: 90px;
+    left: 100px;
+    height: 50px;
+    width: 95%;
+    max-width: 50px;
+  }
+}
+
+.window::before,
+.window::after {
+  content: "";
+  position: absolute;
+  background: var(--window-line-color);
+}
+
+.window::before {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 2px;
+}
+
+.window::after {
+  top: 50%;
+  height: 2px;
+  width: 100%;
+}
+
+.door {
+  bottom: 25px;
+  right: 80px;
+  height: 130px;
+  width: 95%;
+  max-width: 70px;
+  z-index: 3;
+  border-radius: 5px 5px 0 0;
+  background: var(--main-color-blue);
+  box-shadow: var(--House-Shadow);
+
+  @media (width <=420px) {
+    bottom: 12px;
+    height: 70px;
+    width: 95%;
+    max-width: 40px;
+  }
+}
+
+.doorbell {
+  content: "";
+  position: absolute;
+  top: 75%;
+  right: 165px;
+  height: 27px;
+  width: 16px;
+  z-index: 3;
+  border-radius: 20%;
+  border: 4px solid var(--main-color-blue);
+  box-shadow: var(--House-Shadow);
+  background: whitesmoke;
+
+  @media (width <=375px) {
+    top: 77%;
+    right: 130px;
+    height: 27px;
+    width: 16px;
+  }
+}
+
+.doorbell::before {
+  content: "";
+  position: absolute;
+  top: 17%;
+  right: 1px;
+  height: 3px;
+  width: 2px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color-blue);
+  box-shadow: var(--House-Shadow);
+  background: gray;
+  z-index: 3;
+
+  @media (width <=375px) {
+    top: 18%;
+    right: 1px;
+    height: 0px;
+    width: 2px;
+  }
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color-blue);
+  background: var(--background-ui-dark);
+
+  @media (width <=420px) {
+    top: 50%;
+    right: 10px;
+    height: 7px;
+    width: 7px;
+  }
+}
+
+.grass {
+  bottom: 25px;
+  left: 80px;
+  height: 60px;
+  width: 60px;
+  z-index: 4;
+  border-radius: 30px 30px 3px 5.1px;
+  background: var(--grass-green);
+  box-shadow: var(--grass-shadow);
+
+  @media (width <=420px) {
+    bottom: 12px;
+    left: 80px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.grass::before {
+  content: "";
+  position: absolute;
+  bottom: -0px;
+  left: 80px;
+  height: 40px;
+  width: 75px;
+  border-radius: 50% 50% 1% 0%;
+  background: var(--grass-green);
+  box-shadow: var(--grass-shadow);
+
+  @media (width <=420px) {
+    display: none;
+  }
+}
+
+.grass::after {
+  content: "";
+  position: absolute;
+  bottom: -0px;
+  left: 50px;
+  height: 40px;
+  width: 50px;
+  border-radius: 50% 50% 0 0;
+  background: var(--grass-green);
+  box-shadow: var(--grass-shadow);
+
+  @media (width <=420px) {
+    left: 40px;
+    height: 40px;
+    width: 50px;
+  }
+}
+
+.button-container {
+  width: 95%;
+  max-width: 400px;
+}
+
+.button-Wrapper {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 13px 9px;
+
+  & button {
+    font-family: system-ui;
+    background-color: var(--button-bg-blue);
+    box-shadow: var(--button-shadow);
+    height: 100%;
+    padding-block: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    line-height: 1;
+    font-size: 0.8rem;
+    border: 1.5px solid var(--border-lightblue-3d);
+    width: 25%;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:last-child {
+      width: 100%;
+    }
+    &:hover {
+      transform: translateY(-3px);
+      /* transform: rotate(360deg); */
+      transition: all 0.5s;
+    }
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+}

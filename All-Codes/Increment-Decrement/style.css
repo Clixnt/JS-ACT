@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background: var(--ld);
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  color: white;
+}
+* {
+  padding: 0;
+  margin: 0;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  /* outline: 3px solid blueviolet; */
+}
+:root {
+  --ld: url("Image/El.svg") no-repeat center center fixed;
+  --text: hsl(0, 0%, 100%);
+  --Lin-Grad: linear-gradient(hsl(4, 94%, 69%), rgb(198, 35, 104));
+  --Lin-Grad2: linear-gradient(hsl(350, 100%, 88%), hsl(39, 100%, 50%));
+  --color-1: rgb(250, 114, 104);
+  --color-2: rgb(198, 35, 104);
+  --box-shadown2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.sec1 {
+  background: var(--Lin-Grad);
+  border-radius: 20px;
+  box-shadow: var(--box-shadown2);
+  width: 90%;
+  max-width: 300px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sec2 {
+  background: var(--Lin-Grad);
+  border-radius: 20px;
+  box-shadow: var(--box-shadown2);
+  width: 90%;
+  max-width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 30px;
+
+  & .name-out {
+    width: 90%;
+    height: 90px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    text-shadow: 0px 0px 13px black;
+    box-shadow: var(--box-shadown2);
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+  & .Output-In {
+    height: 100%;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadown2);
+    width: 90%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    overflow: hidden;
+
+    & p {
+      overflow-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+      padding: 10px;
+      font-size: 1.4rem;
+    }
+  }
+}
+.cont1,
+.cont2 {
+  width: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--box-shadown2);
+}
+.cont1 {
+  width: 85%;
+  padding-inline: 0;
+}
+.input-number {
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  & input {
+    width: 95%;
+    max-width: 215px;
+    padding-left: 7px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadown2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+}
+
+.desc-inv {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 7px;
+
+  & .desc1,
+  .desc2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    & span,
+    p {
+      box-shadow: var(--box-shadown2);
+      background-color: var(--color-1);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+    }
+    & span {
+      width: 60px;
+      height: 60px;
+    }
+    & p {
+      width: 150px;
+      height: 60px;
+    }
+  }
+}

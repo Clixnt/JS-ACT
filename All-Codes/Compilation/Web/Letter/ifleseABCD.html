@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="author" name="Clint Justine Lorenzo">
+    <link rel="shortcut icon" href="/SELECT-ACT/Icon/icons8-skatepark-48.png" type="image/x-icon">
+    <title>Letter A-Z IfElse</title>
+    <style>
+        :root {
+            --box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            --text-3d: 0px 0px 0 rgb(150, 146, 136), -1px 1px 0 rgb(141, 137, 127), -2px 2px 0 rgb(133, 129, 119), -3px 3px 0 rgb(125, 121, 111), -4px 4px 0 rgb(116, 112, 102), -5px 5px 0 rgb(108, 104, 94), -6px 6px 0 rgb(100, 96, 86), -7px 7px 6px rgba(0, 0, 0, 0.48), -7px 7px 1px rgba(0, 0, 0, 0.5), 0px 0px 6px rgba(0, 0, 0, .2);
+            --color-1: rgba(245, 245, 245, 0.89);
+            --color-2: rgba(128, 128, 128, 0.432);
+            --CssScan-BoxShadow-2: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 2rem;
+            background-color: var(--color-2);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .inputB,
+        .checkB {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: solid 2px gray;
+        }
+
+        .inputB {
+            width: 160px;
+            height: 39px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            padding-left: 10px;
+        }
+
+        .checkB {
+            height: 43px;
+            width: 80px;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        #output {
+            font-size: 1.5rem;
+            color: #333;
+            background-color: var(--color-1);
+            box-shadow: var(--box-shadow);
+            border-radius: 15px;
+            width: 290px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-box {
+            width: 260px;
+            background-color: var(--color-1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: center;
+            gap: 10px 10px;
+            align-items: center;
+        }
+
+        .title-name {
+            width: 260px;
+            background-color: var(--color-1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: center;
+            gap: 10px 10px;
+            align-items: center;
+        }
+
+        .title-name h1 {
+            font-size: 23px;
+            font-weight: bolder;
+        }
+
+        .close-btn {
+            box-shadow: var(--CssScan-BoxShadow-2);
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            right: 40px;
+
+            &:hover {
+                background-color: darkred;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="close-btn" href="/Sandbox-JS/index.html">X</a>
+
+    <main>
+        <div class="title-name">
+            <h1>Javascript If-Else</h1>
+        </div>
+
+        <div class="input-box">
+            <input type="text" class="inputB" id="inputLetter" placeholder="Enter Letter" maxlength="1">
+            <button class="checkB" onclick="checkLetter()">Check</button>
+        </div>
+
+        <div id="output">...</div>
+    </main>
+
+    <script>
+        function checkLetter() {
+            const letter = document.getElementById("inputLetter").value.toLowerCase();
+            let message;
+
+            if (letter == "a") {
+                message = "a for apple";
+            }
+            else if (letter == "b") {
+                message = "b for bat";
+            }
+            else if (letter == "c") {
+                message = "c for cat";
+            }
+            else if (letter == "d") {
+                message = "d for dog";
+            }
+            else if (letter == "e") {
+                message = "e for elephant";
+            }
+            else if (letter == "f") {
+                message = "f for fish";
+            }
+            else if (letter == "g") {
+                message = "g for G.O.A.T SUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
+            }
+            else if (letter == "h") {
+                message = "h for ham";
+            }
+            else if (letter == "i") {
+                message = "i for ink";
+            }
+            else if (letter == "j") {
+                message = "j for january";
+            }
+            else if (letter == "k") {
+                message = "k for king";
+            }
+            else if (letter == "l") {
+                message = "l for language";
+            }
+            else if (letter == "m") {
+                message = "m for money";
+            }
+            else if (letter == "n") {
+                message = "n for nice";
+            }
+            else if (letter == "o") {
+                message = "o for orange";
+            }
+            else if (letter == "p") {
+                message = "p for panda";
+            }
+            else if (letter == "q") {
+                message = "q for qatar";
+            }
+            else if (letter == "r") {
+                message = "r for ring";
+            }
+            else if (letter == "s") {
+                message = "s for soft";
+            }
+            else if (letter == "t") {
+                message = "t for tan";
+            }
+            else if (letter == "u") {
+                message = "u for uruguay";
+            }
+            else if (letter == "v") {
+                message = "v for violin";
+            }
+            else if (letter == "w") {
+                message = "w for win";
+            }
+            else if (letter == "x") {
+                message = "x for xylophone";
+            }
+            else if (letter == "y") {
+                message = "y for year";
+            }
+            else if (letter == "z") {
+                message = "z for zebra";
+            }
+            else {
+                message = "Not an alphabet";
+            }
+
+            document.getElementById("output").textContent = message;
+        }
+    </script>
+</body>
+
+</html>

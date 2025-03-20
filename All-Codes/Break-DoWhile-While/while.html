@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <DIV>
+        <h2>JavaScript While Loop</h2>
+        <h3>DECREMENT</h3>
+    </DIV>
+
+    <p id="demo"></p>
+
+    <script>
+        let text = "";
+        let i = 10;
+        while (i >= 0) {
+            text += "<br>The number is " + i;
+            i--;
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 9</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Strings</h1>
+    <h1>Split()</h1>
+    <p id="output"></p>
+
+    <script>
+        let text = "Lorenzo";
+        const myArr = text.split("");
+
+        text = "";
+        for (let i = 0; i <myArr.length; i++) {
+            text += myArr[i] + "<br>"
+        }
+
+        document.getElementById("output").innerHTML = text;
+    </script>
+</body>
+
+</html>
